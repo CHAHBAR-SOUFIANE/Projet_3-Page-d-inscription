@@ -10,9 +10,12 @@ section{
 
 }
 #list{
-    height: 400px;
+    height: 700px;
     margin-top: 95px;
-    
+    /* display: none; */
+}
+h1{
+    display: none;
 }
 
 #txtNom{
@@ -59,11 +62,13 @@ section{
     #div-form, #btnEnregistrer, #print{
         display:none;
     }
+    h1{
+        display:inline;
+    }
     #list{
         color:blue;
+        background-color: rgb(82, 51, 16);
     }
-    body{
-        background-color: DBE9E9;
-    }
+   
 }
 
