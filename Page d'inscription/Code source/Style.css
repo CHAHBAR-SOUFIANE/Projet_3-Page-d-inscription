@@ -59,8 +59,11 @@ section{
     #div-form, #btnEnregistrer, #print{
         display:none;
     }
-    p{
+    #list{
         color:blue;
+    }
+    body{
+        background-color: DBE9E9;
     }
 }
 
