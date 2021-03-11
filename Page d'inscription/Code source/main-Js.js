@@ -8,7 +8,7 @@ function enregistrer(){
     // if (txtNom == ""||txtPrenom == ""||txtAdress == ""||txtTelephone == ""||txtEmail == "") {
     //     alert("Remplire les champs");
     // }
-    document.getElementById("list").innerHTML+="<b>Nom &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</b>&nbsp&nbsp"+txtNom+"<br>";
+    document.getElementById("list").innerHTML+="<hr><b>Nom &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</b>&nbsp&nbsp"+txtNom+"<br>";
     document.getElementById("list").innerHTML+="<b>Prénom &nbsp&nbsp&nbsp&nbsp:</b>&nbsp&nbsp"+txtPrenom+"<br>";
     document.getElementById("list").innerHTML+="<b>Adress &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</b>&nbsp&nbsp"+txtAdress+"<br>";
     document.getElementById("list").innerHTML+="<b>Telephone :</b>&nbsp&nbsp&nbsp"+txtTelephone+"<br>";

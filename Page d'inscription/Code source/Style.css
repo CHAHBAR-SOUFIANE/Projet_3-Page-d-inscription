@@ -59,7 +59,7 @@ h1{
 }
 
 @media print{
-    #div-form, #btnEnregistrer, #print{
+    #div-form, #btnEnregistrer, #print, hr{
         display:none;
     }
     h1{
@@ -68,6 +68,10 @@ h1{
     #list{
         color:blue;
         background-color: rgb(82, 51, 16);
+        
+    }
+    hr{
+        display: block;
     }
    
 }

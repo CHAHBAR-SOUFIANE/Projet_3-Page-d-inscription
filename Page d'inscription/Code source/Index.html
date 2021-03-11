@@ -9,41 +9,40 @@
 </head>
 <body>
     <section>
-        <div id="div-form">
+        <form id="div-form">
             
                 <h3 id="Remplire-champs">Remplire les champs s'il vous plait :</h3>
                 <div >
                     <label >Nom:</label>  
-                    <input id="txtNom" type="text">
+                    <input id="txtNom" type="text" required>
                 </div>
                 <div id="top">
                     <label >Prénom:</label>  
-                    <input id="txtPrenom" type="text" >
+                    <input id="txtPrenom" type="text" required>
                 </div>
                 <div id="top">
                     <label >Adress:</label>  
-                    <input id="txtAdress" type="text" >
+                    <input id="txtAdress" type="text" required>
                 </div>
                 <div id="top">
                     <label >Telephone:</label>  
-                    <input id="txtTelephone" type="tel" >
+                    <input id="txtTelephone" type="tel" required>
                 </div>
                 <div id="top">
                     <label >Email:</label>  
-                    <input id="txtEmail" type="email"  >
-                </div>
-                <div>
-                    <input id="btnEnregistrer" type="submit" value="Enregistrer" onclick="enregistrer()">
-                    <input id="print" type="button" value="Print" onclick="window.print()">
-                    <!-- <button id="btnEnregistrer" onclick="enregistrer()">Enregistrer</button> -->
-                </div>
-                
-           
+                    <input id="txtEmail" type="email" value="aaaa@gmail.com"  required>
+                </div>         
+            </form>
+            <div>
+                <input id="btnEnregistrer" type="submit" value="Enregistrer" onclick="enregistrer()">
+                <input id="print" type="button" value="Print" onclick="window.print()">
+                <!-- <button id="btnEnregistrer" onclick="enregistrer()">Enregistrer</button> -->
             </div>
 
             <p id="list">
                 <h1>merci</h1>
             </p>
+            <hr>
      
         
     </section>
