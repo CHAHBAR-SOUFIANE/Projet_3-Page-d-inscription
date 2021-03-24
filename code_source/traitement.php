@@ -29,11 +29,10 @@ tfoot {
     <tbody>
         <tr>
             <td>Nom</td>
-            <td>Age</td>
+            
         </tr>
         <tr>
             <td><?php echo $_POST['nom'] ?></td>
-            <td><?php echo $_POST['age'] ?></td>
         </tr>
     </tbody>
 </table> </td>
