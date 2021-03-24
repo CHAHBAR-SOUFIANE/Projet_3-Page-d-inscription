@@ -36,7 +36,15 @@ tfoot {
         </tr>
     </tbody>
 </table> </td>
-
+<?php
+$test = $_POST['nom'];
+ $personne = array($test);
+ foreach($personne as $element)
+{
+    echo $element;
+    
+}
+?>
 </body>
 
 </html>
