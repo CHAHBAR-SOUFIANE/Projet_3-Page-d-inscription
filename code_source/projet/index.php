@@ -9,29 +9,29 @@
 </head>
 <body>
     <section>
-        <form action="traitement.php" method="get">
+        <form action="traitement.php" method="get" target="_blank">
         <div id="div-form">
             
             <h3 id="Remplire-champs">Remplire les champs s'il vous plait :</h3>
             <div >
                 <label >Nom:</label>  
-                <input id="txtNom" type="text">
+                <input id="txtNom" name="nom" type="text">
             </div>
             <div id="top">
                 <label >Prénom:</label>  
-                <input id="txtPrenom" type="text" >
+                <input id="txtPrenom" name="prenom" type="text" >
             </div>
             <div id="top">
                 <label >Adress:</label>  
-                <input id="txtAdress" type="text" >
+                <input id="txtAdress" name="adress" type="text" >
             </div>
             <div id="top">
                 <label >Telephone:</label>  
-                <input id="txtTelephone" type="tel" >
+                <input id="txtTelephone" name="tele" type="tel" >
             </div>
             <div id="top">
                 <label >Email:</label>  
-                <input id="txtEmail" type="email"  >
+                <input id="txtEmail" name="email" type="email"  >
             </div>
             <div>
                 <input id="btnEnregistrer" type="submit" value="Enregistrer" onclick="enregistrer()">

@@ -3,20 +3,31 @@
 session_start();
 
 //initialisation de tableau des participants
-$list_participants1=[];
+// $list_participants2=[];
 
  // Trouver ou créer le tableau dans Session
- if( isset( $_SESSION['liste_participants1'] ) ) {
-    $liste_participants1 =  $_SESSION['liste_participants1'] ;
+ //nom
+ if( isset( $_SESSION['liste_nomS'] ) ) {
+    $liste_nom =  $_SESSION['liste_nomS'] ;
  }else {
-    $_SESSION['liste_participants1'] =  $liste_participants1;
+    $_SESSION['liste_nomS'] =  $liste_nom;
+ }
+//prenom
+if( isset( $_SESSION['liste_prenomS'] ) ) {
+    $liste_prenom =  $_SESSION['liste_prenomS'] ;
+ }else {
+    $_SESSION['liste_prenomS'] =  $liste_prenom;
  }
 
-  // Ajouter le nom du nom dans le tableau
- @ $liste_participants1[] = $_GET["nom"];
+
+  // Ajouter le nom et email dans le tableau
+ @ $liste_nom[] = $_GET["nom"];
+ @ $liste_prenom[] = $_GET["prenom"];
+ 
 
   // Enregistrer le tableau dans la session
-$_SESSION['liste_participants1'] =  $liste_participants1;
+$_SESSION['liste_nomS'] =  $liste_nom;
+$_SESSION['liste_prenomS'] =  $liste_prenom;
 
 ?>
 <!doctype html>
@@ -30,14 +41,21 @@ $_SESSION['liste_participants1'] =  $liste_participants1;
 <body>
 
 <h1>la listes des participants</h1>
-<?php
-        foreach ($liste_participants1 as $value) { 
-            echo $value . "<br>"
+<ul> 
+    <?php 
+    for ($i=0; $i <sizeof($liste_nom); $i++){
         ?>
-        
+    
+        <li><?php echo  $liste_nom[$i]."&nbsp".$liste_prenom[$i]?></li>
         <?php
         }
-    ?> 
+    ?>  
+    
+
+   
+
+
+</ul>
 </body>
 
 </html>

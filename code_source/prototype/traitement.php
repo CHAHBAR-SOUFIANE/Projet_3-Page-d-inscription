@@ -3,7 +3,7 @@
 session_start();
 
 //initialisation de tableau des participants
-$list_participants1=[];
+$liste_participants1=[];
 
  // Trouver ou créer le tableau dans Session
  if( isset( $_SESSION['liste_participants1'] ) ) {
