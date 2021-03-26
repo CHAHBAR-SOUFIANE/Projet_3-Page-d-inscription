@@ -19,10 +19,6 @@ $list_participants1=[];
 $_SESSION['liste_participants1'] =  $liste_participants1;
 
 ?>
-
-
-
-
 <!doctype html>
 <html>
 <head>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <script src='main-Js.js'></script>
+</head>
+<body>
+    <section>
+        <form action="traitement.php" method="get">
+        <div id="div-form">
+            
+            <h3 id="Remplire-champs">Remplire les champs s'il vous plait :</h3>
+            <div >
+                <label >Nom:</label>  
+                <input id="txtNom" type="text">
+            </div>
+            <div id="top">
+                <label >Prénom:</label>  
+                <input id="txtPrenom" type="text" >
+            </div>
+            <div id="top">
+                <label >Adress:</label>  
+                <input id="txtAdress" type="text" >
+            </div>
+            <div id="top">
+                <label >Telephone:</label>  
+                <input id="txtTelephone" type="tel" >
+            </div>
+            <div id="top">
+                <label >Email:</label>  
+                <input id="txtEmail" type="email"  >
+            </div>
+            <div>
+                <input id="btnEnregistrer" type="submit" value="Enregistrer" onclick="enregistrer()">
+                <input id="print" type="button" value="Print" onclick="window.print()">
+                <input type="submit" value="Valider" id="valider">
+                <!-- <button id="btnEnregistrer" onclick="enregistrer()">Enregistrer</button> -->
+            </div>          
+        </div>
+        </form>
+        
+
+            <p id="list">
+                <h1>merci</h1>
+            </p>
+     
+        
+    </section>
+</body>
+</html>
