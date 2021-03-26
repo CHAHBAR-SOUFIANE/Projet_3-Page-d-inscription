@@ -8,7 +8,7 @@ Page inscription v2
 </title>
 </head>
 <body>
-<form action="traitement.php" method="POST">    
+<form action="traitement.php" method="GET" target="_blank">    
 <div class="container">
             <div class="labels">
              <div  class="lbl">Nom:</div>                         
