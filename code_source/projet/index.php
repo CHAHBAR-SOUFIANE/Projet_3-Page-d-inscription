@@ -9,7 +9,7 @@
 </head>
 <body>
     <section>
-        <form action="traitement.php" method="get" target="_blank">
+        <form action="traitement.php" method="post" target="_blank">
         <div id="div-form">
             
             <h3 id="Remplire-champs">Remplire les champs s'il vous plait :</h3>

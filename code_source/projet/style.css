@@ -57,7 +57,21 @@ h1{
     background-color:#469787;
     width:110px;
 }
-
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr {
+    background-color: #dddddd;
+  }
 @media print{
     #div-form, #btnEnregistrer, #print{
         display:none;
@@ -69,5 +83,6 @@ h1{
         color:blue;
         background-color: rgb(82, 51, 16);
     }
+    
    
 }
