@@ -39,12 +39,15 @@ if( isset( $_SESSION['liste_emailS'] ) ) {
 
 
   // Ajouter le nom et email dans le tableau
-$liste_nom[] = $_POST["nom"];
-$liste_prenom[] = $_POST["prenom"];
-$liste_adress[] = $_POST["adress"];
-$liste_tele[] = $_POST["tele"];
-$liste_email[] = $_POST["email"];
- 
+  if (isset($_POST["nom"])||isset($_POST["prenom"])||isset($_POST["adress"])||isset($_POST["tele"])||isset($_POST["email"])) {
+    $liste_nom[] = $_POST["nom"];
+    $liste_prenom[] = $_POST["prenom"];
+    $liste_adress[] = $_POST["adress"];
+    $liste_tele[] = $_POST["tele"];
+    $liste_email[] = $_POST["email"];
+     
+  }
+
 
   // Enregistrer le tableau dans la session
 $_SESSION['liste_nomS'] =  $liste_nom;
@@ -88,7 +91,7 @@ h2{
 }
 
 @media print{
-    h2{
+    h2,.btns{
         display:none;
     }
 
@@ -131,7 +134,13 @@ input{
     ?>  
         </tbody>
     </table>
+    <div class="btns">
     <input id="print" type="button" value="Imprimer" onclick="window.print()">
+    <a href="index.php"><input href="" type="button" value="Retour"></a>
+    
+    <input type="button" value="Fermer" onclick="window.close()">
+    </div>
+    
    
 </body>
 

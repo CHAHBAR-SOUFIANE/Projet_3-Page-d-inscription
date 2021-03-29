@@ -9,7 +9,7 @@
 </head>
 <body>
     <section>
-        <form action="traitement.php" method="post" target="_blank">
+        <form action="traitement.php" method="post">
         <div id="div-form">
             
             <h3 id="Remplire-champs">Remplire les champs s'il vous plait :</h3>
@@ -35,19 +35,14 @@
             </div>
             <div>
                 <input id="btnEnregistrer" type="submit" value="Enregistrer" onclick="enregistrer()">
-                <input id="print" type="button" value="Print" onclick="window.print()">
-                <input type="submit" value="Valider" id="valider">
+                <a href="traitement.php" target="_blank"><input id="consulter" type="button" value="Consulter" ></a>
+                
+                <!-- <input type="submit" value="Valider" id="valider"> -->
                 <!-- <button id="btnEnregistrer" onclick="enregistrer()">Enregistrer</button> -->
-            </div>          
+            </div>     
+             
         </div>
         </form>
-        
-
-            <p id="list">
-                <h1>merci</h1>
-            </p>
-     
-        
     </section>
 </body>
 </html>
