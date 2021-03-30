@@ -9,31 +9,31 @@ session_start();
  //nom
  if( isset( $_SESSION['liste_nomS'] ) ) {
     $liste_nom =  $_SESSION['liste_nomS'] ;
- }else {
+ }elseif(isset($liste_nom)) {
    $_SESSION['liste_nomS'] =  $liste_nom;
  }
 //prenom
 if( isset( $_SESSION['liste_prenomS'] ) ) {
     $liste_prenom =  $_SESSION['liste_prenomS'] ;
- }else {
+ }elseif(isset($liste_prenom)) {
    $_SESSION['liste_prenomS'] =  $liste_prenom;
  }
  //Adress
 if( isset( $_SESSION['liste_adressS'] ) ) {
     $liste_adress =  $_SESSION['liste_adressS'] ;
- }else {
+ }elseif(isset($liste_adress)) {
    $_SESSION['liste_adressS'] =  $liste_adress;
  }
   //Telephone
 if( isset( $_SESSION['liste_teleS'] ) ) {
     $liste_tele =  $_SESSION['liste_teleS'] ;
- }else {
+ }elseif(isset($liste_tele)) {
    $_SESSION['liste_teleS'] =  $liste_tele;
  }
    //Email
 if( isset( $_SESSION['liste_emailS'] ) ) {
     $liste_email =  $_SESSION['liste_emailS'] ;
- }else {
+ }elseif(isset($liste_email)) {
    $_SESSION['liste_emailS'] =  $liste_email;
  }
 
@@ -50,11 +50,14 @@ if( isset( $_SESSION['liste_emailS'] ) ) {
 
 
   // Enregistrer le tableau dans la session
-$_SESSION['liste_nomS'] =  $liste_nom;
-$_SESSION['liste_prenomS'] =  $liste_prenom;
-$_SESSION['liste_adressS'] =  $liste_adress;
-$_SESSION['liste_teleS'] =  $liste_tele;
-$_SESSION['liste_emailS'] =  $liste_email;
+  if (isset($liste_nom)&&isset($liste_prenom)&&isset($liste_adress)&&isset($liste_tele)&&isset($liste_email) ){
+    $_SESSION['liste_nomS'] =  $liste_nom;
+    $_SESSION['liste_prenomS'] =  $liste_prenom;
+    $_SESSION['liste_adressS'] =  $liste_adress;
+    $_SESSION['liste_teleS'] =  $liste_tele;
+    $_SESSION['liste_emailS'] =  $liste_email;
+  }
+
 
 ?>
 <!doctype html>
@@ -119,17 +122,20 @@ input{
         <tbody>
         <?php 
         //affichage des participant
-        for ($i=0; $i <sizeof($liste_nom); $i++){
-     
-        echo "<tr>";
-        echo "<td>".$liste_nom[$i]."</td>";
-        echo "<td>".$liste_prenom[$i]."</td>";
-        echo "<td>".$liste_adress[$i]."</td>";
-        echo "<td>".$liste_tele[$i]."</td>";
-        echo "<td>".$liste_email[$i]."</td>";
-        echo "<tr>";
-        
+        if (empty($liste_nom)) {
+          echo "Aucun participant a enregistrer ";
+        }else {
+          for ($i=0; $i <sizeof($liste_nom); $i++){     
+            echo "<tr>";
+            echo "<td>".$liste_nom[$i]."</td>";
+            echo "<td>".$liste_prenom[$i]."</td>";
+            echo "<td>".$liste_adress[$i]."</td>";
+            echo "<td>".$liste_tele[$i]."</td>";
+            echo "<td>".$liste_email[$i]."</td>";
+            echo "<tr>";       
+            }
         }
+      
 
     ?>  
         </tbody>
