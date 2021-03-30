@@ -85,9 +85,9 @@ th{
     background-color:white;
 }
 
-/* tr:nth-child(even) {
+tr:nth-child(even) {
   background-color: #dddddd;
-} */
+}
 
 /* tr {
   background-color: #dddddd;
@@ -129,14 +129,27 @@ input{
         if (empty($liste_nom)) {
           echo "Aucun participant a enregistrer ";
         }else {
+          $j=0;
           for ($i=0; $i <sizeof($liste_nom); $i++){     
-            echo "<tr>";
+          if($j==0){
+            echo "<tr style='  background-color: #dddddd;'>";
             echo "<td>".$liste_nom[$i]."</td>";
             echo "<td>".$liste_prenom[$i]."</td>";
             echo "<td>".$liste_adress[$i]."</td>";
             echo "<td>".$liste_tele[$i]."</td>";
             echo "<td>".$liste_email[$i]."</td>";
-            echo "<tr>";       
+            echo "<tr>";
+            $j++;
+          }else{
+              echo "<tr style='  background-color: #11111;'>";
+              echo "<td>".$liste_nom[$i]."</td>";
+              echo "<td>".$liste_prenom[$i]."</td>";
+              echo "<td>".$liste_adress[$i]."</td>";
+              echo "<td>".$liste_tele[$i]."</td>";
+              echo "<td>".$liste_email[$i]."</td>";
+              echo "<tr>";
+              $j=0;
+            }       
             }
         }
       
@@ -158,7 +171,9 @@ input{
     //  }else{
     //   document.getElementsByTagName("tr").style.background="#dddddd";
     //  }
-    
+    var background=document.getElementsByName()("tr");
+        background.style.backgroundColor="red";
+
    </script>
 </body>
 
