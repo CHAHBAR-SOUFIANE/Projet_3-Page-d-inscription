@@ -85,9 +85,13 @@ th{
     background-color:white;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
   background-color: #dddddd;
-}
+} */
+
+/* tr {
+  background-color: #dddddd;
+} */
 
 h2{
     font-size:2rem;
@@ -147,7 +151,15 @@ input{
     <input type="button" value="Fermer" onclick="window.close()">
     </div>
     
-   
+   <script>
+    //  var background=document.getElementsByTagName("tr").style.backgroundColor;
+    //  if (background=="#dddddd") {
+    //   document.getElementsByTagName("tr").style.background="#eaeaea";
+    //  }else{
+    //   document.getElementsByTagName("tr").style.background="#dddddd";
+    //  }
+    
+   </script>
 </body>
 
 </html>

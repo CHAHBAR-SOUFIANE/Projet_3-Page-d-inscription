@@ -1,17 +1,83 @@
-function enregistrer(){
-    var txtNom      =document.getElementById("txtNom").value;
-    var txtPrenom   =document.getElementById("txtPrenom").value; 
-    var txtAdress   =document.getElementById("txtAdress").value;
-    var txtTelephone=document.getElementById("txtTelephone").value;
-    var txtEmail    =document.getElementById("txtEmail").value;
+$(document).ready(function() {
+    $('#contact_form').bootstrapValidator({
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            prenom: {
+                validators: {
+                        stringLength: {
+                        min: 2,
+                    },
+                        notEmpty: {
+                        message: 'Please enter your First Name'
+                    }
+                }
+            },
+             nom: {
+                validators: {
+                     stringLength: {
+                        min: 2,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Last Name'
+                    }
+                }
+            },
+            adress: {
+                validators: {
+                     stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Username'
+                    }
+                }
+            },
+			 
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter your Email Address'
+                    },
+                    emailAddress: {
+                        message: 'Please enter a valid Email Address'
+                    }
+                }
+            },
+            tele: {
+                validators: {
+                  stringLength: {
+                        min: 9, 
+                        max: 12,
+                    notEmpty: {
+                        message: 'Please enter your Contact No.'
+                     }
+                }
+            },
+			
+                }
+            }
+        })
+        .on('success.form.bv', function(e) {
+            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                $('#contact_form').data('bootstrapValidator').resetForm();
 
-    // if (txtNom == ""||txtPrenom == ""||txtAdress == ""||txtTelephone == ""||txtEmail == "") {
-    //     alert("Remplire les champs");
-    // }
-    document.getElementById("list").innerHTML+="<b>Nom &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</b>&nbsp&nbsp"+txtNom+"<br>";
-    document.getElementById("list").innerHTML+="<b>Prénom &nbsp&nbsp&nbsp&nbsp:</b>&nbsp&nbsp"+txtPrenom+"<br>";
-    document.getElementById("list").innerHTML+="<b>Adress &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</b>&nbsp&nbsp"+txtAdress+"<br>";
-    document.getElementById("list").innerHTML+="<b>Telephone :</b>&nbsp&nbsp&nbsp"+txtTelephone+"<br>";
-    document.getElementById("list").innerHTML+="<b>Mail &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</b>&nbsp&nbsp"+txtEmail+"<br><br>";
+            // Prevent form submission
+            e.preventDefault();
 
-}
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+        });
+});
