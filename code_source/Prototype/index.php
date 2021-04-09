@@ -19,10 +19,12 @@
 
 <script>
 $.get("list_participant.php", function(data){
-    var apprenants = JSON.parse(data);
-    apprenants.forEach(participant => {
-        var affichage =  $("<p></p>")
-                .text(participant.nom + "," + participant.prenom );
+    var participants = JSON.parse(data);
+    
+    participants.forEach( participant => {
+
+        var affichage =  $("<p></p>").text(participant.nom + "," + participant.prenom );
+
         $("#af").append(affichage);
     });
 });
