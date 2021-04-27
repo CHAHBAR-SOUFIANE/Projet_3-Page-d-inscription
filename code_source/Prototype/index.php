@@ -20,6 +20,7 @@
 <script>
 $.get("list_participant.php", function(data){
     var participants = JSON.parse(data);
+    document.write(participants);
     
     participants.forEach( participant => {
 

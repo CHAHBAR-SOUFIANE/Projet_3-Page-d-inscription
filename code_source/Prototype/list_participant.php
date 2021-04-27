@@ -4,7 +4,7 @@ $participantList = [];
 $participant = new participants();
 $participant -> nom = "Ahmad";
 $participant -> prenom = "Alami";
-$participantList = $participant;
+$participantList [] = $participant;
 
 $participantList_json =  json_encode($participantList);
 
